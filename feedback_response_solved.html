@@ -2,23 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Response</title>
     <style>
-        .message {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 50px;
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
         }
-        .emojis {
-            font-size: 40px;
+        
+        .message-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            animation: bounce 1s ease infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00; /* Adjust confetti color */
+            animation: fall 2s infinite linear;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        /* Additional crackers for top corners */
+        .confetti.top-left {
+            top: -10px;
+            left: -10px;
+        }
+        
+        .confetti.top-right {
+            top: -10px;
+            right: -10px;
         }
     </style>
 </head>
 <body>
-    <div class="message">
-        <p>Thanks for your feedback! We're glad your issue is resolved. 😊🎉</p>
-        <p>🎉🎊🥳</p>
+    <div class="message-box">
+        <h1>Thanks for your feedback response!</h1>
+        <p>We're glad your issue is resolved. 😊🎉</p>
     </div>
+    <!-- Confetti -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <!-- Add more confetti divs as needed -->
+    
+    <!-- Additional crackers for top corners -->
+    <div class="confetti top-left"></div>
+    <div class="confetti top-right"></div>
 </body>
 </html>
